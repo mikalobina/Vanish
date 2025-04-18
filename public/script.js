@@ -1,4 +1,3 @@
-
 const socket = io();
 let roomCode = "";
 let myName = "";
@@ -28,6 +27,8 @@ document.getElementById("joinBtn").onclick = () => {
 socket.on("startChat", () => {
   document.getElementById("roomCodeDisplay").style.display = "none";
   document.getElementById("chat").style.display = "block";
+
+  // show vanish button only for the creator
   if (isCreator) {
     document.getElementById("vanishBtn").style.display = "block";
   }
